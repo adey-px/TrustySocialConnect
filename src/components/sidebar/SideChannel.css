@@ -1,0 +1,19 @@
+
+.sideChannel > h4 {
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    color: gray;
+    cursor: pointer;
+    background-color: #2f3135;
+}
+
+.sideChannel:hover > h4 {
+    color: #ffff;
+    background-color: #40464b;
+}
+
+.sideChannel__tag {
+    font-size: 30px;
+    padding: 8px;
+}
