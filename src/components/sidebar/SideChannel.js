@@ -6,8 +6,10 @@ const SideChannel = ({id, channel}) => {
   return (
     <div className='sideChannel'>
        <h4>
-          <span className='sideChannel__tag'>#</span>
-          YouTube
+          <span className='sideChannel__tag'>
+            #
+          </span>
+            YouTube
        </h4>
     </div>
   );

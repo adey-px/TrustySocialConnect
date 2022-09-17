@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import ChatSpace from './components/chatspace/ChatSpace';
-import Sidebar from './components/sidebar/Sidebar';
+import Sidebar from './components/sidebar/LeftSidebar';
 
 function App() {
   return (
