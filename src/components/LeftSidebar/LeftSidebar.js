@@ -12,7 +12,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import SideChannel from './SideChannel';
 import './LeftSidebar.css';
 
-const Sidebar = () => {
+const LeftSidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -73,4 +73,4 @@ const Sidebar = () => {
   );
 }
 
-export default Sidebar;
+export default LeftSidebar;
