@@ -93,7 +93,8 @@ const LeftSidebar = () => {
       </div>
 
       <div className="sidebar__Profile">
-        <Avatar src={user.photo} 
+        <Avatar src={user.photo}
+                onMouse 
                 onClick={() => auth.signOut()}  
         />
 

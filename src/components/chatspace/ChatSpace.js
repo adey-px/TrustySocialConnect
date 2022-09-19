@@ -75,7 +75,7 @@ const ChatSpace = () => {
             value={input}
             disabled={!channelId}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`#${channelName} - Type message and press "Enter" to send.`}
+            placeholder={`Add or select a #Channel above, type here and press "Enter" to send.`}
           />
 
           <button
