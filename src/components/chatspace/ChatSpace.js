@@ -13,6 +13,7 @@ import { selectUser } from '../../features/userSlice';
 import db from '../../Firebase';
 import "./ChatSpace.css";
 
+// Chat space component
 const ChatSpace = () => {
 
   // Get details for channel display

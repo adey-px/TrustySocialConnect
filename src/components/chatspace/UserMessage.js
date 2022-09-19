@@ -1,8 +1,8 @@
 import React from 'react';
 import { Avatar } from "@mui/material";
-
 import './UserMessage.css';
 
+// Message component
 const UserMessage = ({ eachMsg, user, timestamp }) => {
   return (
     <div className="user__Message">

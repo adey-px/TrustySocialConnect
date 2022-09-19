@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// App slice for redux store
 export const appSlice = createSlice({
   name: "app",
   initialState: {

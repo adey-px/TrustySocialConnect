@@ -18,38 +18,51 @@ import "./LeftSidebar.css";
 
 const LeftSidebar = () => {
 
-  // Grab user instance from userSlice 
+  // Grab user instance from userSlice
   const user = useSelector(selectUser);
 
   // Display channels to auth user
   const [channels, setChannels] = useState([]);
 
+  // Mouse over avatar
+  const [display, setDisplay] = useState(false);
+
+  // Display channels
   useEffect(() => {
-    db.collection('channels').onSnapshot((snapshot) => 
-      setChannels(snapshot.docs.map((doc) => ({
-        id: doc.id,
-        channel: doc.data(),
-      }))
+    db.collection("channels").onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          channel: doc.data(),
+        }))
       )
     );
   }, []);
 
   // Handler to add new channel - fire up above useEffect
   const addChannel = () => {
-    const name = prompt('Enter name to create a new channel');
+    const name = prompt("Enter name to create a new channel");
 
     if (name) {
-      db.collection('channels').add({
+      db.collection("channels").add({
         name: name,
-      })
+      });
     }
+  };
+
+  // Show text on mouseOver Avatar
+  const handleOver = () => {
+    setDisplay(true);
+  };
+
+  const handleAway = () => {
+    setDisplay(false);
   };
 
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <h3>Welcome Channel</h3>
-        <ExpandMoreIcon />
+        <h3>Discord Webclone</h3>
       </div>
 
       <div className="sidebar__channels">
@@ -59,18 +72,12 @@ const LeftSidebar = () => {
             <h4>Add New Channel</h4>
           </div>
 
-          <AddIcon onClick={addChannel}
-                   className="sidebar__addChannel" 
-          />
+          <AddIcon onClick={addChannel} className="sidebar__addChannel" />
         </div>
 
         <div className="sidebar__channelsList">
           {channels.map(({ id, channel }) => (
-            <SideChannel 
-              key={id}
-              id={id}
-              name={channel.name}
-            />
+            <SideChannel key={id} id={id} name={channel.name} />
           ))}
         </div>
       </div>
@@ -82,8 +89,8 @@ const LeftSidebar = () => {
         />
 
         <div className="sidebar__voiceMsg">
-          <h3> Voice Connected</h3>
-          <p>Stream</p>
+          <h3> Live Chat</h3>
+          <p>Streaming</p>
         </div>
 
         <div className="sidebar__voiceIcons">
@@ -93,15 +100,25 @@ const LeftSidebar = () => {
       </div>
 
       <div className="sidebar__Profile">
-        <Avatar src={user.photo}
-                onMouse 
-                onClick={() => auth.signOut()}  
+        <Avatar
+          src={user.photo}
+          onClick={() => auth.signOut()}
+          onMouseOver={handleOver}
+          onMouseOut={handleAway}
+          className="avatar__profile"
         />
 
-        <div className="sidebar__profileInfo">
+        <div
+          onClick={() => auth.signOut()}
+          onMouseOver={handleOver}
+          onMouseOut={handleAway}
+          className="sidebar__profileInfo"
+        >
           <h3>{user.displayName}</h3>
           <p>#{user.uid.substring(0, 9)}</p>
         </div>
+
+        {display && "Click to log out"}
 
         <div className="sidebar__profileIcons">
           <MicIcon />

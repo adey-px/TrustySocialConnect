@@ -4,9 +4,9 @@ import { setChannelInfo } from '../../features/appSlice'
 
 import './SideChannel.css';
 
+// Side channel component
 const SideChannel = ({id, name}) => {
 
-  //
   const dispatch = useDispatch();
 
   return (
@@ -15,15 +15,15 @@ const SideChannel = ({id, name}) => {
         channelId: id,
         channelName: name,
     }))}
-         className='sideChannel'
+      className='sideChannel'
     >
 
-       <h4>
-          <span className='sideChannel__tag'>
-            #
-          </span>
-            {name}
-       </h4>
+      <h4>
+        <span className='sideChannel__tag'>
+          #
+        </span>
+          {name}
+      </h4>
     </div>
   );
 }

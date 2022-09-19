@@ -5,9 +5,9 @@ import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
 import HelpIcon from "@mui/icons-material/Help";
-
 import './MainHeader.css';
 
+// Main header component
 const MainHeader = ({channelName}) => {
   return (
     <div className="chat__Header">
@@ -26,7 +26,7 @@ const MainHeader = ({channelName}) => {
         <PeopleAltRoundedIcon />
 
         <div className="header__Search">
-          <input placeholder='Search for any topic' />
+          <input placeholder='Search coming soon...' />
           <SearchIcon />
         </div>
 

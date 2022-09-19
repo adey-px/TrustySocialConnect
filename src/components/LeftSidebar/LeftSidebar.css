@@ -76,6 +76,7 @@
 .sidebar__profileInfo {
     flex: 1;
     padding: 10px;
+    cursor: pointer;
 }
 
 .sidebar__profileInfo > h3 {
@@ -86,3 +87,6 @@
     padding: 10px;
 }
 
+.avatar__profile {
+    cursor: pointer;
+}
