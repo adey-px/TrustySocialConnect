@@ -8,7 +8,7 @@ import HelpIcon from "@mui/icons-material/Help";
 
 import './MainHeader.css';
 
-const MainHeader = () => {
+const MainHeader = ({channelName}) => {
   return (
     <div className="chat__Header">
       <div className="header__Left">
@@ -16,7 +16,7 @@ const MainHeader = () => {
             <span className="header__tag">
                 #
             </span>
-            Test Channel
+            {channelName}
         </h3>
       </div>
 
@@ -26,8 +26,8 @@ const MainHeader = () => {
         <PeopleAltRoundedIcon />
 
         <div className="header__Search">
-            <input placeholder='Search for any topic' />
-            <SearchIcon />
+          <input placeholder='Search for any topic' />
+          <SearchIcon />
         </div>
 
         <SendIcon />

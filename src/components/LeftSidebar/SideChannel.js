@@ -1,15 +1,28 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setChannelInfo } from '../../features/appSlice'
 
 import './SideChannel.css';
 
-const SideChannel = ({id, channel}) => {
+const SideChannel = ({id, name}) => {
+
+  //
+  const dispatch = useDispatch();
+
   return (
-    <div className='sideChannel'>
+    <div onClick={() => dispatch (
+      setChannelInfo({
+        channelId: id,
+        channelName: name,
+    }))}
+         className='sideChannel'
+    >
+
        <h4>
           <span className='sideChannel__tag'>
             #
           </span>
-            YouTube
+            {name}
        </h4>
     </div>
   );

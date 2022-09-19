@@ -3,20 +3,21 @@ import { Avatar } from "@mui/material";
 
 import './UserMessage.css';
 
-const UserMessage = () => {
+const UserMessage = ({ eachMsg, user, timestamp }) => {
   return (
-    <div className='user__Message'>
-        <Avatar />
+    <div className="user__Message">
+      <Avatar src={user.photo} />
 
-        <div className="message__Info">
-            <h4>adeyking
-                <span className="message__timeStamp">
-                    Timestamp space
-                </span>
-            </h4>
+      <div className="message__Info">
+        <h4>
+          {user.displayName}
+          <span className="message__timeStamp">
+            {new Date(timestamp?.toDate()).toUTCString()}
+          </span>
+        </h4>
 
-            <p>This is a sample message</p>
-        </div>
+        <p>{eachMsg}</p>
+      </div>
     </div>
   );
 }
