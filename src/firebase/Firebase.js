@@ -2,6 +2,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
+// Config from adding firebase web app
 const firebaseConfig = {
   apiKey: "AIzaSyA35kEk-OCDHkfnVJgRscAPBOf96CKw7hU",
   authDomain: "dicord-webclone.firebaseapp.com",
@@ -13,10 +14,10 @@ const firebaseConfig = {
 };
 
 // Initialize firebase app
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 // Grab database & authentication
-const db = firebaseApp.firestore();
+const db = app.firestore();
 const auth = firebase.auth();
 
 // Connect google service for user login
